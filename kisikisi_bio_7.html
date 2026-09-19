@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 7 Biology Review - 40 MCQ</title>
+    <style>
+        :root {
+            --primary-blue: #0077b6;
+            --secondary-blue: #00b4d8;
+            --light-blue-bg: #e0f7fa;
+            --card-bg: #f4fbfd;
+            --accent-blue: #90e0ef;
+            --dark-text: #03045e;
+            --border-color: #caf0f8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-blue-bg);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.15);
+            border: 1px solid var(--border-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            text-align: center;
+        }
+        .header-info {
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-blue);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #e0f7fa, #caf0f8);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header-info h2 {
+            margin: 0 0 5px 0;
+            color: var(--dark-text);
+        }
+        .header-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-blue);
+        }
+        .header-info p {
+            margin: 4px 0;
+            font-size: 15px;
+        }
+        .teacher-tag {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .kisi-kisi-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-left: 6px solid var(--secondary-blue);
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .kisi-kisi-box h3 {
+            text-align: left;
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+        .kisi-kisi-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .kisi-kisi-box li {
+            margin-bottom: 8px;
+        }
+        .question-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+        .question-card:hover {
+            border-color: var(--secondary-blue);
+        }
+        .question-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .options-list label {
+            cursor: pointer;
+            display: block;
+            padding: 10px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .options-list label:hover {
+            background: var(--accent-blue);
+            color: var(--dark-text);
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0, 119, 182, 0.2);
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #005f9e;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #e0f7fa;
+            color: var(--dark-text);
+            border: 2px solid var(--secondary-blue);
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-info">
+        <h2>BIOLOGY REVIEW</h2>
+        <h3>SMP SWASTA INTEGRITAS BANGSA</h3>
+        <p><strong>Subject:</strong> Biology | <strong>Grade:</strong> 7 | <strong>Academic Year:</strong> 2026/2027</p>
+        <span class="teacher-tag">Teacher: Ms. Theres</span>
+    </div>
+
+    <div class="kisi-kisi-box">
+        <h3>📋 Material Review Topics</h3>
+        <ul>
+            <li><strong>Characteristics of Living Organisms:</strong> Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition, and Metabolism.</li>
+            <li><strong>Classification & Taxonomy:</strong> Taxonomic Ranks, Binomial Nomenclature, Arthropods, and Dichotomous Keys.</li>
+            <li><strong>Cell Structure & Organization:</strong> Organelles (Mitochondria, Ribosomes, Chloroplasts, Vacuoles, Cell Membrane, Cell Wall) and Specialized Cells (Sperm cell).</li>
+            <li><strong>Levels of Organization:</strong> Cell → Tissue → Organ → Organ System → Organism.</li>
+            <li><strong>Microscopes & Magnification:</strong> Light microscope magnification formula (Magnification = Image Size/ Actual Size).</li>
+            <li><strong>Human Body Organs:</strong> Identification and functions of major internal organs.</li>
+        </ul>
+    </div>
+
+    <form id="reviewForm">
+        <h2>Multiple Choice Questions</h2>
+        <div id="mcContainer"></div>
+
+        <button type="button" class="btn-submit" onclick="calculateScore()">Submit & Check Score</button>
+    </form>
+
+    <div id="resultBox" class="result-box"></div>
+</div>
+
+<script>
+    const mcQuestions = [
+        {
+            q: "Which characteristic is shared by all living organisms?",
+            options: ["They can move from place to place.", "They can reproduce.", "They can make their own food.", "They have a brain."],
+            answer: 1
+        },
+        {
+            q: "Nutrition is defined as...",
+            options: ["removing metabolic waste products", "releasing energy from food", "taking in materials for energy, growth, and development", "producing new organisms"],
+            answer: 2
+        },
+        {
+            q: "The smallest structural and functional unit of all living organisms is the...",
+            options: ["atom", "molecule", "cell", "organism"],
+            answer: 2
+        },
+        {
+            q: "Reproduction is essential for living species because it...",
+            options: ["helps an individual grow larger over time", "ensures the continuation of the species across generations", "allows organisms to release energy from food", "maintains a constant internal temperature"],
+            answer: 1
+        },
+        {
+            q: "A houseplant bending its stem toward a window light source demonstrates which characteristic?",
+            options: ["Growth", "Sensitivity", "Nutrition", "Respiration"],
+            answer: 1
+        },
+        {
+            q: "What is the defining characteristic of an autotroph?",
+            options: ["It feeds on other organisms.", "It manufactures its own food.", "It cannot move independently.", "It resides in aquatic environments."],
+            answer: 1
+        },
+        {
+            q: "Which process involves removing toxic materials and metabolic waste products from an organism?",
+            options: ["Ingestion", "Excretion", "Reproduction", "Egestion"],
+            answer: 1
+        },
+        {
+            q: "Which list shows the correct order of classification from largest group to smallest group?",
+            options: ["Species → Genus → Family → Order → Class → Phylum → Kingdom", "Kingdom → Phylum → Class → Order → Family → Genus → Species", "Class → Kingdom → Phylum → Order → Genus → Family → Species", "Kingdom → Class → Order → Phylum → Family → Genus → Species"],
+            answer: 1
+        },
+        {
+            q: "In the binomial scientific name <i>Homo sapiens</i>, what does the first word <i>Homo</i> represent?",
+            options: ["Species", "Family", "Genus", "Kingdom"],
+            answer: 2
+        },
+        {
+            q: "Which of the following organisms belongs to the phylum Arthropoda?",
+            options: ["Frog", "Panda", "Grasshopper", "Salmon"],
+            answer: 2
+        },
+        {
+            q: "The sum of all chemical activities occurring within the cells of a living organism is called...",
+            options: ["Homeostasis", "Diffusion", "Differentiation", "Metabolism"],
+            answer: 3
+        },
+        {
+            q: "Which plant rapidly folds its leaves inward when touched?",
+            options: ["Bougainvillea", "Mimosa pudica", "Palisade plant", "Mango tree"],
+            answer: 1
+        },
+        {
+            q: "Scientists who study living organisms and life processes are known as...",
+            options: ["Chemists", "Geologists", "Biologists", "Physicists"],
+            answer: 2
+        },
+        {
+            q: "Why is an automobile considered non-living despite consuming fuel and releasing exhaust gases?",
+            options: ["It is too heavy to move.", "It is composed of metals.", "It cannot reproduce or grow.", "It does not generate energy."],
+            answer: 2
+        },
+        {
+            q: "What is the maximum magnification limit for a standard laboratory light microscope?",
+            options: ["300x", "1,500x", "46x", "200,000x"],
+            answer: 1
+        },
+        {
+            q: "The basic structure of a cell membrane is primarily composed of...",
+            options: ["lipids and proteins", "fats and carbohydrates", "nucleic acids and carbohydrates", "starches and proteins"],
+            answer: 0
+        },
+        {
+            q: "How many chromosomes are present in a normal human sperm cell?",
+            options: ["23", "46", "48", "24"],
+            answer: 0
+        },
+        {
+            q: "Which organelle is widely referred to as the powerhouse of the cell?",
+            options: ["Ribosome", "Mitochondrion", "Vacuole", "Nucleus"],
+            answer: 1
+        },
+        {
+            q: "Which organelle is directly responsible for synthesizing proteins inside the cell?",
+            options: ["Ribosome", "Vacuole", "Cell wall", "Chloroplast"],
+            answer: 0
+        },
+        {
+            q: "Chloroplasts contain a green pigment necessary for photosynthesis named...",
+            options: ["riboflavin", "carotene", "hemoglobin", "chlorophyll"],
+            answer: 3
+        },
+        {
+            q: "Which specialized structure enables a sperm cell to swim toward an egg cell?",
+            options: ["Large vacuole", "Tail (Flagellum)", "Cell membrane", "Cell wall"],
+            answer: 1
+        },
+        {
+            q: "Which sequence correctly represents the levels of biological organization in multicellular organisms?",
+            options: ["Organ → Cell → Tissue → Organ system", "Cell → Tissue → Organ → Organ system", "Tissue → Cell → Organ → Organ system", "Cell → Organ → Tissue → Organ system"],
+            answer: 1
+        },
+        {
+            q: "Which statement accurately describes a biological tissue?",
+            options: ["A group of similar cells working together to perform a specific function", "A group of different organs operating together", "A single cell carrying out all life functions", "A collection of organ systems working together"],
+            answer: 0
+        },
+        {
+            q: "A specimen has an actual size of 2 mm. Under a microscope, its image measures 20 mm. What is the magnification?",
+            options: ["x2", "x5", "x10", "x40"],
+            answer: 2
+        },
+        {
+            q: "Which structure is present in plant cells but absent in animal cells?",
+            options: ["Nucleus", "Cytoplasm", "Cell wall", "Cell membrane"],
+            answer: 2
+        },
+        {
+            q: "Respiration is best defined as the chemical process that...",
+            options: ["breathes air into the lungs", "releases energy from glucose molecules", "absorbs water from the soil", "expels undigested food materials"],
+            answer: 1
+        },
+        {
+            q: "In binomial nomenclature, how should a scientific name be correctly written?",
+            options: ["Both words capitalized", "Genus capitalized and species in lowercase, italicized", "Both words in lowercase", "Species capitalized and genus in lowercase"],
+            answer: 1
+        },
+        {
+            q: "Which characteristic is shared by all arthropods?",
+            options: ["Internal bony skeleton", "Jointed legs and an exoskeleton", "Feathers and wings", "Soft unsegmented bodies"],
+            answer: 1
+        },
+        {
+            q: "What is the main function of the large permanent vacuole in plant cells?",
+            options: ["Synthesizing proteins", "Storing cell sap and maintaining cell turgidity", "Controlling cell division", "Conducting cellular respiration"],
+            answer: 1
+        },
+        {
+            q: "An organ is defined as...",
+            options: ["a collection of different tissues working together to perform specific functions", "a group of identical cells performing one task", "the smallest functional unit of life", "a system of organs working together"],
+            answer: 0
+        },
+        {
+            q: "Which internal human organ is primarily responsible for filtering blood and producing urine?",
+            options: ["Liver", "Kidney", "Lungs", "Heart"],
+            answer: 1
+        },
+        {
+            q: "If a tomato image measures 30 mm in a drawing and its actual size is 50 mm, what is the magnification?",
+            options: ["x0.6", "x1.6", "x15", "x25"],
+            answer: 0
+        },
+        {
+            q: "Which tool is specifically used in biology to identify unknown organisms through a series of paired choices?",
+            options: ["Magnifying glass", "Dichotomous key", "Barometer", "Graduated cylinder"],
+            answer: 1
+        },
+        {
+            q: "Which human organ pumps oxygenated blood throughout the body?",
+            options: ["Brain", "Lungs", "Heart", "Stomach"],
+            answer: 2
+        },
+        {
+            q: "Where is the genetic material (DNA) housed in a eukaryotic cell?",
+            options: ["Cytoplasm", "Mitochondrion", "Nucleus", "Ribosome"],
+            answer: 2
+        },
+        {
+            q: "Which organ system in humans includes the trachea, bronchi, and lungs?",
+            options: ["Digestive System", "Respiratory System", "Circulatory System", "Excretory System"],
+            answer: 1
+        },
+        {
+            q: "Plant cell walls are primarily composed of which tough structural carbohydrate?",
+            options: ["Starch", "Glycogen", "Cellulose", "Protein"],
+            answer: 2
+        },
+        {
+            q: "Growth in living organisms involves a permanent increase in...",
+            options: ["water content only", "size and dry mass", "waste products", "external temperature"],
+            answer: 1
+        },
+        {
+            q: "Organisms that feed on other living organisms to obtain energy are called...",
+            options: ["Autotrophs", "Heterotrophs", "Phototrophs", "Producers"],
+            answer: 1
+        },
+        {
+            q: "Which organ in the human body is chiefly responsible for gas exchange (oxygen and carbon dioxide)?",
+            options: ["Heart", "Lungs", "Liver", "Pancreas"],
+            answer: 1
+        }
+    ];
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function renderMCQuestions() {
+        let shuffledQuestions = [...mcQuestions];
+        shuffleArray(shuffledQuestions);
+
+        const container = document.getElementById('mcContainer');
+        const labels = ['A', 'B', 'C', 'D'];
+
+        shuffledQuestions.forEach((qObj, index) => {
+            let optionsWithStatus = qObj.options.map((opt, i) => {
+                return { text: opt, isCorrect: i === qObj.answer };
+            });
+
+            shuffleArray(optionsWithStatus);
+
+            let qDiv = document.createElement('div');
+            qDiv.className = 'question-card';
+
+            let qText = document.createElement('div');
+            qText.className = 'question-title';
+            qText.innerHTML = `${index + 1}. ${qObj.q}`;
+            qDiv.appendChild(qText);
+
+            let optList = document.createElement('ul');
+            optList.className = 'options-list';
+
+            optionsWithStatus.forEach((optObj, optIndex) => {
+                let li = document.createElement('li');
+                li.innerHTML = `
+                    <label>
+                        <input type="radio" name="mc_${index}" value="${optObj.isCorrect}">
+                        ${labels[optIndex]}. ${optObj.text}
+                    </label>
+                `;
+                optList.appendChild(li);
+            });
+
+            qDiv.appendChild(optList);
+            container.appendChild(qDiv);
+        });
+    }
+
+    function calculateScore() {
+        let correctCount = 0;
+        const totalMC = mcQuestions.length;
+
+        for (let i = 0; i < totalMC; i++) {
+            const selectedOption = document.querySelector(`input[name="mc_${i}"]:checked`);
+            if (selectedOption && selectedOption.value === "true") {
+                correctCount++;
+            }
+        }
+
+        const score = Math.round((correctCount / totalMC) * 100);
+        const resultBox = document.getElementById('resultBox');
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `Your Score: ${score} / 100<br><span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span>`;
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+        renderMCQuestions();
+    };
+</script>
+
+</body>
+</html>
