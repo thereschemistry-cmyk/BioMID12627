@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 9 Biology Review & Examination - 40 MCQ</title>
+    <style>
+        :root {
+            --primary-pink: #d81b60;
+            --secondary-pink: #f48fb1;
+            --light-pink-bg: #fce4ec;
+            --card-bg: #fff0f5;
+            --accent-pink: #f8bbd0;
+            --dark-text: #880e4f;
+            --border-color: #f8bbd0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-pink-bg);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.15);
+            border: 1px solid var(--border-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-pink);
+            text-align: center;
+        }
+        .header-info {
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-pink);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header-info h2 {
+            margin: 0 0 5px 0;
+            color: var(--dark-text);
+        }
+        .header-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-pink);
+        }
+        .header-info p {
+            margin: 4px 0;
+            font-size: 15px;
+        }
+        .teacher-tag {
+            display: inline-block;
+            background-color: var(--primary-pink);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .kisi-kisi-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-left: 6px solid var(--secondary-pink);
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .kisi-kisi-box h3 {
+            text-align: left;
+            margin-top: 0;
+            color: var(--primary-pink);
+        }
+        .kisi-kisi-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .kisi-kisi-box li {
+            margin-bottom: 8px;
+        }
+        .question-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+        .question-card:hover {
+            border-color: var(--secondary-pink);
+        }
+        .question-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .options-list label {
+            cursor: pointer;
+            display: block;
+            padding: 10px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .options-list label:hover {
+            background: var(--accent-pink);
+            color: var(--dark-text);
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-pink);
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #ad1457;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fce4ec;
+            color: var(--dark-text);
+            border: 2px solid var(--secondary-pink);
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-info">
+        <h2>SMP SWASTA INTEGRITAS BANGSA</h2>
+        <h3>BIOLOGY REVIEW & EXAMINATION (40 MULTIPLE CHOICE QUESTIONS)</h3>
+        <p><strong>Subject:</strong> Biology | <strong>Grade:</strong> 9 | <strong>Academic Year:</strong> 2026/2027</p>
+        <span class="teacher-tag">Teacher: Ms. Theres</span>
+    </div>
+
+    <!-- EXAM BLUEPRINT (KISI-KISI) -->
+    <div class="kisi-kisi-box">
+        <h3>📋 Material Review Blueprint (Kisi-Kisi)</h3>
+        <ul>
+            <li><strong>Asexual Reproduction in Plants:</strong> Definitions, advantages/disadvantages, vegetative propagation structures (rhizomes, stem tubers, cuttings, runners).</li>
+            <li><strong>Sexual Reproduction in Plants:</strong> Flower structure and functions (petals, sepals, stamen, anther, filament, carpel/pistil, stigma, style, ovary, ovule, receptacle), pollination vs fertilization, seed and fruit formation.</li>
+            <li><strong>Human Male Reproduction:</strong> Organ functions (testes, scrotum, prostate, urethra), sperm cell structure (head, acrosome, nucleus, midpiece, mitochondria, tail/flagellum) and chromosome count (haploid = 23).</li>
+            <li><strong>Human Female Reproduction:</strong> Organ functions (ovary, oviduct/fallopian tube, uterus, endometrium, cervix, vagina), fertilisation site, embryo implantation, comparison of sperm vs egg cells.</li>
+            <li><strong>Menstrual Cycle & Puberty:</strong> Menstrual cycle timeline calculation (ovulation calculation), menopause definition, secondary sexual characteristics during puberty, and STIs (HIV).</li>
+        </ul>
+    </div>
+
+    <form id="reviewForm">
+        <h2>Multiple Choice Questions</h2>
+        <div id="mcContainer"></div>
+
+        <button type="button" class="btn-submit" onclick="calculateScore()">Submit & Check Score</button>
+    </form>
+
+    <div id="resultBox" class="result-box"></div>
+</div>
+
+<script>
+    // 40 Multiple Choice Questions derived directly from Grade 9 Biology Content
+    const mcQuestions = [
+        {
+            q: "What is asexual reproduction?",
+            options: [
+                "Fusion of two gametes to form a zygote",
+                "Production of offspring with genetic variation from two parents",
+                "Production of genetically identical offspring from one parent, without the fusion of gametes",
+                "A process that only occurs in flowering plants"
+            ],
+            answer: 2
+        },
+        {
+            q: "Which of the following is an example of asexual reproduction in a plant?",
+            options: [
+                "Formation of a zygote after pollination",
+                "Production of a new potato plant from a stem tuber",
+                "Fusion of a pollen nucleus with an egg nucleus",
+                "Formation of a seed after fertilisation"
+            ],
+            answer: 1
+        },
+        {
+            q: "Which underground structure allows a ginger plant to reproduce asexually?",
+            options: ["Runner", "Seed", "Rhizome", "Pollen tube"],
+            answer: 2
+        },
+        {
+            q: "What is a major disadvantage of asexual reproduction?",
+            options: [
+                "It requires two parents",
+                "Offspring may not adapt well to sudden changes in the environment",
+                "It is a much slower method of reproducing",
+                "Fusion of gametes is required"
+            ],
+            answer: 1
+        },
+        {
+            q: "Sexual reproduction in plants involves:",
+            options: [
+                "The production of genetically identical offspring from one parent",
+                "The formation of new plants directly from a rhizome",
+                "The fusion of a male gamete and a female gamete to form a zygote",
+                "The growth of buds on a stem tuber"
+            ],
+            answer: 2
+        },
+        {
+            q: "Large-petaled and brightly colored flowers help the plant to attract...",
+            options: ["predators", "pollinators", "parasites", "competitors"],
+            answer: 1
+        },
+        {
+            q: "Which flower part functions to enclose and protect the young flower bud before it opens?",
+            options: ["Sepals", "Petals", "Stigma", "Anther"],
+            answer: 0
+        },
+        {
+            q: "Which part of the flower receives pollen grains during pollination?",
+            options: ["Style", "Stigma", "Ovary", "Filament"],
+            answer: 1
+        },
+        {
+            q: "The stamen is the male part of a flower. It consists of:",
+            options: [
+                "a stigma and a style",
+                "an ovary and an ovule",
+                "a filament and an anther",
+                "a petal and a sepal"
+            ],
+            answer: 2
+        },
+        {
+            q: "The upper section of the carpel (female reproductive system in plants) where pollen lands and travels down consists of:",
+            options: [
+                "a stigma and a style",
+                "an ovary and an ovule",
+                "a filament and an anther",
+                "a petal and a sepal"
+            ],
+            answer: 0
+        },
+        {
+            q: "The flower part that acts as the modified stem tip connecting the flower to its stalk is the...",
+            options: ["receptacle", "anther", "ovary", "sepal"],
+            answer: 0
+        },
+        {
+            q: "After fertilisation, the ovule develops into the seed, while the ovary develops into the...",
+            options: ["roots", "leaves", "flower", "fruit"],
+            answer: 3
+        },
+        {
+            q: "How many chromosomes are present in a normal human sperm cell?",
+            options: ["23", "46", "48", "24"],
+            answer: 0
+        },
+        {
+            q: "Which organ in the male reproductive system produces sperm and testosterone?",
+            options: ["Prostate gland", "Scrotum", "Testis", "Urethra"],
+            answer: 2
+        },
+        {
+            q: "The scrotum is located outside the main body cavity because...",
+            options: [
+                "it protects the tube that carries sperm from being hurt",
+                "it lets urine and semen pass through at the same time",
+                "it keeps the testes cooler than body temperature for proper sperm growth",
+                "it helps the body produce testosterone much faster"
+            ],
+            answer: 2
+        },
+        {
+            q: "In the female reproductive system, where does fertilisation usually take place?",
+            options: ["Uterus", "Oviduct (Fallopian tube)", "Cervix", "Vagina"],
+            answer: 1
+        },
+        {
+            q: "Which structure provides a site where an embryo can implant and develop during pregnancy?",
+            options: ["Ovary", "Oviduct", "Vagina", "Endometrium / Uterus"],
+            answer: 3
+        },
+        {
+            q: "Which statement correctly compares human sperm and egg cells?",
+            options: [
+                "Sperm are non-motile, while eggs are motile.",
+                "Sperm are smaller in size and motile, while eggs are larger and non-motile.",
+                "Egg cells are produced continuously from puberty, while sperm are produced before birth.",
+                "Sperm do not contain a nucleus."
+            ],
+            answer: 1
+        },
+        {
+            q: "What is the correct scientific definition of ovulation?",
+            options: [
+                "The breakdown of the uterine lining during menstruation",
+                "The fusion of a sperm nucleus with an egg nucleus",
+                "The release of a mature egg from the ovary",
+                "The implantation of an embryo in the uterus"
+            ],
+            answer: 2
+        },
+        {
+            q: "Hana has a regular 28-day menstrual cycle. She starts her period (Day 1) on November 3rd. Since ovulation occurs exactly 14 days before the next cycle starts, ovulation will occur on November...",
+            options: ["14th", "17th", "21st", "27th"],
+            answer: 1
+        },
+        {
+            q: "During fertilisation, which part of the sperm cell penetrates and enters the egg cell?",
+            options: ["Tail", "Head", "Midpiece", "Fluid"],
+            answer: 1
+        },
+        {
+            q: "Which sexually transmitted virus specifically attacks and destroys the human immune system?",
+            options: ["HIV", "HPV", "Herpes", "Gonorrhea"],
+            answer: 0
+        },
+        {
+            q: "What is the single cell formed immediately as a product of successful fusion between sperm and egg?",
+            options: ["Zygote", "Fetus", "Embryo", "Placenta"],
+            answer: 0
+        },
+        {
+            q: "The permanent cessation/end of the menstrual cycle in women as hormone levels shift is called...",
+            options: ["menstruation", "ovulation", "menopause", "fertilisation"],
+            answer: 2
+        },
+        {
+            q: "An advantage of using plant cuttings instead of seeds for propagation is that:",
+            options: [
+                "It produces new genetic variations in offspring",
+                "It is faster and produces plants identical to the parent",
+                "It relies entirely on wind pollination",
+                "It requires two different parent plants"
+            ],
+            answer: 1
+        },
+        {
+            q: "Which part of the sperm contains many mitochondria to provide energy (ATP) for movement?",
+            options: ["Acrosome", "Head", "Midpiece", "Flagellum"],
+            answer: 2
+        },
+        {
+            q: "What is the main function of the acrosome at the tip of the sperm head?",
+            options: [
+                "It carries half the genetic material.",
+                "It contains enzymes to help penetrate the protective layers of the egg cell.",
+                "It provides mechanical propulsion.",
+                "It produces testosterone."
+            ],
+            answer: 1
+        },
+        {
+            q: "Which of the following is a TRUE statement regarding puberty?",
+            options: [
+                "Puberty affects physical growth as well as emotional maturity.",
+                "Puberty occurs at the exact same age for everyone.",
+                "Hormonal changes decrease oil production in the skin.",
+                "Sperm production occurs in monthly cycles like menstruation."
+            ],
+            answer: 0
+        },
+        {
+            q: "In plants, pollen grains are produced inside which structure?",
+            options: ["Stigma", "Style", "Anther", "Filament"],
+            answer: 2
+        },
+        {
+            q: "The female reproductive part of a flower consisting of stigma, style, and ovary is collectively called the...",
+            options: ["Stamen", "Carpel / Pistil", "Sepal", "Petal"],
+            answer: 1
+        },
+        {
+            q: "What is the function of the fluid produced by the prostate gland and seminal vesicles?",
+            options: [
+                "To produce sperm cells",
+                "To provide nutrients and a fluid medium for sperm to swim (semen)",
+                "To store mature eggs",
+                "To decrease body temperature"
+            ],
+            answer: 1
+        },
+        {
+            q: "Which vessel carries both urine and semen out of the male body at different times?",
+            options: ["Ureter", "Sperm duct (Vas deferens)", "Urethra", "Scrotum"],
+            answer: 2
+        },
+        {
+            q: "Which organ produces egg cells (ova) and female sex hormones (estrogen and progesterone)?",
+            options: ["Uterus", "Ovary", "Oviduct", "Cervix"],
+            answer: 1
+        },
+        {
+            q: "What connects the vagina to the main body of the uterus?",
+            options: ["Oviduct", "Cervix", "Ovary", "Vulva"],
+            answer: 1
+        },
+        {
+            q: "If an egg is not fertilised after ovulation, what happens to the thick endometrium (lining of the uterus)?",
+            options: [
+                "It becomes a fetus immediately.",
+                "It breaks down and leaves the body through menstruation.",
+                "It forms a seed.",
+                "It stays permanently inside the uterus."
+            ],
+            answer: 1
+        },
+        {
+            q: "A runner (stolon) is a horizontal stem used for natural vegetative propagation in which plant?",
+            options: ["Ginger", "Strawberry", "Potato", "Onion"],
+            answer: 1
+        },
+        {
+            q: "Potato tubers store energy in the form of starch and reproduce asexually using...",
+            options: ["flowers", "buds or 'eyes' on the stem tuber", "pollen grains", "seeds"],
+            answer: 1
+        },
+        {
+            q: "How many total chromosomes are restored in a human zygote after fertilisation?",
+            options: ["23", "46", "92", "12"],
+            answer: 1
+        },
+        {
+            q: "Acne and oily skin during puberty are mainly caused by an increase in...",
+            options: ["blood pressure", "hormone levels stimulating sebaceous glands", "stomach acid", "dietary fibre"],
+            answer: 1
+        },
+        {
+            q: "Pollination is defined as the transfer of pollen grains from the...",
+            options: [
+                "anther to the stigma",
+                "stigma to the ovary",
+                "ovule to the seed",
+                "petal to the sepal"
+            ],
+            answer: 0
+        }
+    ];
+
+    // Fisher-Yates Shuffle Function for Questions & Options
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Render Unscrambled Questions & Choices
+    function renderMCQuestions() {
+        let shuffledQuestions = [...mcQuestions];
+        shuffleArray(shuffledQuestions);
+
+        const container = document.getElementById('mcContainer');
+        const labels = ['A', 'B', 'C', 'D'];
+
+        shuffledQuestions.forEach((qObj, index) => {
+            let optionsWithStatus = qObj.options.map((opt, i) => {
+                return { text: opt, isCorrect: i === qObj.answer };
+            });
+
+            shuffleArray(optionsWithStatus);
+
+            let qDiv = document.createElement('div');
+            qDiv.className = 'question-card';
+
+            let qText = document.createElement('div');
+            qText.className = 'question-title';
+            qText.innerHTML = `${index + 1}. ${qObj.q}`;
+            qDiv.appendChild(qText);
+
+            let optList = document.createElement('ul');
+            optList.className = 'options-list';
+
+            optionsWithStatus.forEach((optObj, optIndex) => {
+                let li = document.createElement('li');
+                li.innerHTML = `
+                    <label>
+                        <input type="radio" name="mc_${index}" value="${optObj.isCorrect}">
+                        ${labels[optIndex]}. ${optObj.text}
+                    </label>
+                `;
+                optList.appendChild(li);
+            });
+
+            qDiv.appendChild(optList);
+            container.appendChild(qDiv);
+        });
+    }
+
+    // Calculate Score
+    function calculateScore() {
+        let correctCount = 0;
+        const totalMC = mcQuestions.length;
+
+        for (let i = 0; i < totalMC; i++) {
+            const selectedOption = document.querySelector(`input[name="mc_${i}"]:checked`);
+            if (selectedOption && selectedOption.value === "true") {
+                correctCount++;
+            }
+        }
+
+        const score = Math.round((correctCount / totalMC) * 100);
+        const resultBox = document.getElementById('resultBox');
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `Your Final Score: ${score} / 100<br><span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span>`;
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+        renderMCQuestions();
+    };
+</script>
+
+</body>
+</html>
