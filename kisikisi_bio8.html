@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 8 Biology Review & Examination - 40 MCQ</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --light-green-bg: #e8f5e9;
+            --card-bg: #f1f8e9;
+            --accent-green: #c8e6c9;
+            --dark-text: #1b5e20;
+            --border-color: #a5d6a7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-green-bg);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.15);
+            border: 1px solid var(--border-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-green);
+            text-align: center;
+        }
+        .header-info {
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-green);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header-info h2 {
+            margin: 0 0 5px 0;
+            color: var(--dark-text);
+        }
+        .header-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-green);
+        }
+        .header-info p {
+            margin: 4px 0;
+            font-size: 15px;
+        }
+        .teacher-tag {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .kisi-kisi-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-left: 6px solid var(--secondary-green);
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .kisi-kisi-box h3 {
+            text-align: left;
+            margin-top: 0;
+            color: var(--primary-green);
+        }
+        .kisi-kisi-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .kisi-kisi-box li {
+            margin-bottom: 8px;
+        }
+        .question-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+        .question-card:hover {
+            border-color: var(--secondary-green);
+        }
+        .question-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+        .options-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .options-list label {
+            cursor: pointer;
+            display: block;
+            padding: 10px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .options-list label:hover {
+            background: var(--accent-green);
+            color: var(--dark-text);
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #1b5e20;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #e8f5e9;
+            color: var(--dark-text);
+            border: 2px solid var(--secondary-green);
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-info">
+        <h2>BIOLOGY REVIEW</h2>
+        <h3>SMP SWASTA INTEGRITAS BANGSA</h3>
+        <p><strong>Subject:</strong> Biology | <strong>Grade:</strong> 8 | <strong>Academic Year:</strong> 2026/2027</p>
+        <span class="teacher-tag">Teacher: Ms. Theres</span>
+    </div>
+
+    <!-- EXAM BLUEPRINT (KISI-KISI) -->
+    <div class="kisi-kisi-box">
+        <h3>📋 Material Review Topics</h3>
+        <ul>
+            <li><strong>Human Digestive System:</strong> Alimentary canal organs (Mouth, Oesophagus, Stomach, Small & Large Intestines, Rectum, Anus), Peristalsis, Digestive Enzymes (Amylase, Pepsin, Lipase, Protease), Stomach Acid (HCl), Bile functions, Dietary Fibre, and Tooth structure (Enamel).</li>
+            <li><strong>Human Circulatory System:</strong> Blood components (Red Blood Cells & Hemoglobin, White Blood Cells, Phagocytes, Lymphocytes, Plasma), Blood Vessels (Arteries, Veins, Capillaries), Double Circulation, and Effects of Exercise on Heart Rate.</li>
+            <li><strong>Transport Mechanisms:</strong> Differences between human transport (Circulation system) and unicellular transport (Diffusion).</li>
+        </ul>
+    </div>
+
+    <form id="reviewForm">
+        <h2>Multiple Choice Questions</h2>
+        <div id="mcContainer"></div>
+
+        <button type="button" class="btn-submit" onclick="calculateScore()">Submit & Check Score</button>
+    </form>
+
+    <div id="resultBox" class="result-box"></div>
+</div>
+
+<script>
+    // 40 Multiple Choice Questions derived directly from Grade 8 Biology Assessment
+    const mcQuestions = [
+        {
+            q: "What is the main function of the oesophagus?",
+            options: ["To digest proteins.", "To absorb nutrients.", "To transport food to the stomach", "To produce digestive enzymes"],
+            answer: 2
+        },
+        {
+            q: "Swallowing is just the very first step of digestion. Which process moves food through the alimentary canal by rhythmic muscle movements?",
+            options: ["Diffusion", "Peristalsis", "Osmosis", "Filtration"],
+            answer: 1
+        },
+        {
+            q: "Which enzyme begins the digestion of starch in the mouth?",
+            options: ["Lipase", "Protease", "Amylase", "Pepsin"],
+            answer: 2
+        },
+        {
+            q: "Which organ produces pancreatic juice containing digestive enzymes?",
+            options: ["Liver", "Pancreas", "Gall bladder", "Stomach"],
+            answer: 1
+        },
+        {
+            q: "What are the final products of protein digestion?",
+            options: ["Glucose", "Fatty acids", "Amino acids", "Starch"],
+            answer: 2
+        },
+        {
+            q: "What is the main function of bile in digestion?",
+            options: ["It digests proteins.", "It emulsifies fats into small droplets.", "It changes glucose into starch.", "It produces amylase."],
+            answer: 1
+        },
+        {
+            q: "Which blood component contains haemoglobin for transporting oxygen?",
+            options: ["Plasma", "Platelets", "Red blood cells", "White blood cells"],
+            answer: 2
+        },
+        {
+            q: "A student eats rice, chicken, and vegetables. Several hours later, nutrients are present in the blood. Which explanation is scientifically accurate?",
+            options: [
+                "Food is absorbed into the blood without being digested.",
+                "Large food molecules are digested into smaller soluble molecules that can be absorbed.",
+                "All food is changed into water in the stomach.",
+                "The blood digests the food before it reaches the intestine."
+            ],
+            answer: 1
+        },
+        {
+            q: "The outermost layer of the teeth that protects the dentine is called...",
+            options: ["enamel", "gum", "cementum layer", "the pulp"],
+            answer: 0
+        },
+        {
+            q: "Why is HCl in the stomach important for protein digestion?",
+            options: [
+                "It activates pepsin and helps break down proteins.",
+                "It breaks proteins into amino acids by itself.",
+                "It neutralizes bile in the stomach.",
+                "It helps the stomach absorb amino acids."
+            ],
+            answer: 0
+        },
+        {
+            q: "Which blood vessel carries blood away from the heart at high pressure?",
+            options: ["Artery", "Vein", "Capillary", "Vena cava"],
+            answer: 0
+        },
+        {
+            q: "What is the main function of dietary fibre in our diet?",
+            options: ["Helps food move through the intestines", "Provides a lot of energy", "Builds muscles", "Produces enzymes"],
+            answer: 0
+        },
+        {
+            q: "The small intestine is well suited for absorption because...",
+            options: ["It contains villi that increase the surface area.", "It produces hydrochloric acid.", "It stores undigested food.", "It contains large amounts of fibre."],
+            answer: 0
+        },
+        {
+            q: "Why is the human circulatory system defined as a 'double circulation' system?",
+            options: [
+                "Blood passes through every capillary twice during a single heartbeat.",
+                "The heart contains two separate pumping sides that operate completely out of sync.",
+                "Blood passes through the heart twice on one complete circuit of the body.",
+                "There are two separate hearts working in tandem inside the chest cavity."
+            ],
+            answer: 2
+        },
+        {
+            q: "A student's heart rate goes from 72 bpm before exercise, to 125 bpm immediately after, and 86 bpm 5 mins later. What conclusion is supported?",
+            options: [
+                "Exercise decreases heart rate.",
+                "Exercise increases heart rate, which later begins to return towards normal.",
+                "Heart rate does not change during exercise.",
+                "Exercise stops the heart from pumping blood."
+            ],
+            answer: 1
+        },
+        {
+            q: "Red blood cells are specialized for transporting oxygen. Which feature is most important for this function?",
+            options: ["They contain haemoglobin.", "They contain digestive enzymes.", "They have a large nucleus.", "They produce antibodies."],
+            answer: 0
+        },
+        {
+            q: "During exercise, the muscles need more oxygen. Which body response helps meet this demand?",
+            options: ["The heart pumps blood more quickly.", "The heart stops pumping temporarily.", "Blood flow to the muscles decreases.", "The lungs stop exchanging gases."],
+            answer: 0
+        },
+        {
+            q: "A person has fewer red blood cells than normal. Why might this person become tired more easily during exercise?",
+            options: ["Less oxygen may be transported to the muscles.", "More bile may be produced.", "More food may be absorbed.", "Blood clotting becomes faster."],
+            answer: 0
+        },
+        {
+            q: "The enzyme ... breaks down starch into smaller sugars during digestion.",
+            options: ["protease", "amylase", "maltase", "lipase"],
+            answer: 1
+        },
+        {
+            q: "Why do red blood cells have a biconcave shape?",
+            options: ["To allow oxygen to diffuse more quickly through the cell.", "To make the cells produce more oxygen.", "To help the cells divide rapidly.", "To prevent oxygen from entering the cells."],
+            answer: 0
+        },
+        {
+            q: "A student feels tired after running for several minutes. Which explanation is most scientifically appropriate?",
+            options: [
+                "The muscles require more oxygen and glucose to release energy.",
+                "The digestive system stops working permanently.",
+                "The blood stops moving around the body.",
+                "The heart no longer needs to pump blood."
+            ],
+            answer: 0
+        },
+        {
+            q: "How does transport differ in humans and unicellular organisms?",
+            options: [
+                "Humans use circulation; unicellular organisms mainly use diffusion.",
+                "Humans use diffusion only; unicellular organisms use blood vessels.",
+                "Both use red blood cells.",
+                "Unicellular organisms have a heart; humans do not."
+            ],
+            answer: 0
+        },
+        {
+            q: "What is the main function of lymphocytes?",
+            options: ["To transport oxygen", "To produce antibodies", "To form blood clots", "To carry carbon dioxide"],
+            answer: 1
+        },
+        {
+            q: "Which statement correctly describes blood plasma?",
+            options: [
+                "Plasma is the liquid part of blood that transports dissolved substances.",
+                "Plasma is made only of red blood cells.",
+                "Plasma produces antibodies and engulfs pathogens.",
+                "Plasma forms the walls of blood vessels."
+            ],
+            answer: 0
+        },
+        {
+            q: "When a phagocyte engulfs and ingests bacteria, this cellular defense process is called...",
+            options: ["pinocytosis", "endocytosis", "Phagocytosis", "Transcytosis"],
+            answer: 2
+        },
+        {
+            q: "Which component of blood is responsible for clotting when a blood vessel is injured?",
+            options: ["Red blood cells", "Platelets", "Plasma", "Lymphocytes"],
+            answer: 1
+        },
+        {
+            q: "Where in the alimentary canal does chemical digestion of carbohydrates begin?",
+            options: ["Stomach", "Small Intestine", "Mouth", "Oesophagus"],
+            answer: 2
+        },
+        {
+            q: "Where is bile produced in the human body?",
+            options: ["Gallbladder", "Pancreas", "Liver", "Stomach"],
+            answer: 2
+        },
+        {
+            q: "Where is bile stored before being released into the small intestine?",
+            options: ["Liver", "Gallbladder", "Pancreas", "Duodenum"],
+            answer: 1
+        },
+        {
+            q: "Which organ in the alimentary canal is primarily responsible for reabsorbing water from indigestible waste?",
+            options: ["Stomach", "Small Intestine", "Large Intestine (Colon)", "Rectum"],
+            answer: 2
+        },
+        {
+            q: "Which blood vessels have thin, microscopic walls that allow nutrients and gases to diffuse into tissues?",
+            options: ["Arteries", "Veins", "Capillaries", "Venules"],
+            answer: 2
+        },
+        {
+            q: "Which enzyme breaks down fats into fatty acids and glycerol?",
+            options: ["Amylase", "Lipase", "Pepsin", "Protease"],
+            answer: 1
+        },
+        {
+            q: "Which blood vessels contain valves to prevent the backflow of blood?",
+            options: ["Arteries", "Veins", "Capillaries", "Arterioles"],
+            answer: 1
+        },
+        {
+            q: "What is the primary site where nutrient absorption into the bloodstream occurs?",
+            options: ["Stomach", "Small Intestine", "Large Intestine", "Oesophagus"],
+            answer: 1
+        },
+        {
+            q: "Which nutrient class is essential for muscle growth and cell repair?",
+            options: ["Carbohydrates", "Fats", "Proteins", "Vitamins"],
+            answer: 2
+        },
+        {
+            q: "What happens to the rate of cellular respiration in muscle cells during vigorous exercise?",
+            options: ["It decreases.", "It increases.", "It stays the same.", "It stops completely."],
+            answer: 1
+        },
+        {
+            q: "Why do red blood cells lack a nucleus when mature?",
+            options: [
+                "To carry more haemoglobin and oxygen",
+                "To divide more rapidly",
+                "To produce antibodies",
+                "To absorb nutrients"
+            ],
+            answer: 0
+        },
+        {
+            q: "Which organ stores feces temporarily before elimination?",
+            options: ["Colon", "Rectum", "Anus", "Caecum"],
+            answer: 1
+        },
+        {
+            q: "Unicellular organisms like Amoeba do not need a circulatory system because...",
+            options: [
+                "they have a low surface area to volume ratio",
+                "diffusion across their cell surface is sufficient",
+                "they use blood vessels instead",
+                "they do not require oxygen"
+            ],
+            answer: 1
+        },
+        {
+            q: "Pepsin functions most effectively in an environment that is...",
+            options: ["strongly alkaline", "strongly acidic", "neutral", "slightly basic"],
+            answer: 1
+        }
+    ];
+
+    // Fisher-Yates Shuffle Function for Questions & Options
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Render MC Questions
+    function renderMCQuestions() {
+        let shuffledQuestions = [...mcQuestions];
+        shuffleArray(shuffledQuestions);
+
+        const container = document.getElementById('mcContainer');
+        const labels = ['A', 'B', 'C', 'D'];
+
+        shuffledQuestions.forEach((qObj, index) => {
+            let optionsWithStatus = qObj.options.map((opt, i) => {
+                return { text: opt, isCorrect: i === qObj.answer };
+            });
+
+            shuffleArray(optionsWithStatus);
+
+            let qDiv = document.createElement('div');
+            qDiv.className = 'question-card';
+
+            let qText = document.createElement('div');
+            qText.className = 'question-title';
+            qText.innerHTML = `${index + 1}. ${qObj.q}`;
+            qDiv.appendChild(qText);
+
+            let optList = document.createElement('ul');
+            optList.className = 'options-list';
+
+            optionsWithStatus.forEach((optObj, optIndex) => {
+                let li = document.createElement('li');
+                li.innerHTML = `
+                    <label>
+                        <input type="radio" name="mc_${index}" value="${optObj.isCorrect}">
+                        ${labels[optIndex]}. ${optObj.text}
+                    </label>
+                `;
+                optList.appendChild(li);
+            });
+
+            qDiv.appendChild(optList);
+            container.appendChild(qDiv);
+        });
+    }
+
+    // Calculate Score
+    function calculateScore() {
+        let correctCount = 0;
+        const totalMC = mcQuestions.length;
+
+        for (let i = 0; i < totalMC; i++) {
+            const selectedOption = document.querySelector(`input[name="mc_${i}"]:checked`);
+            if (selectedOption && selectedOption.value === "true") {
+                correctCount++;
+            }
+        }
+
+        const score = Math.round((correctCount / totalMC) * 100);
+        const resultBox = document.getElementById('resultBox');
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `Your Final Score: ${score} / 100<br><span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span>`;
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+        renderMCQuestions();
+    };
+</script>
+
+</body>
+</html>
