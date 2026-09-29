@@ -13,6 +13,10 @@
             --accent-pink: #f8bbd0;
             --dark-text: #880e4f;
             --border-color: #f8bbd0;
+            --correct-bg: #e8f5e9;
+            --correct-border: #4caf50;
+            --incorrect-bg: #ffebee;
+            --incorrect-border: #f44336;
         }
 
         body {
@@ -66,6 +70,45 @@
             font-weight: bold;
             font-size: 14px;
             margin-top: 5px;
+        }
+        .student-info-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border: 2px solid var(--secondary-pink);
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .student-info-box h3 {
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .input-field {
+            flex: 1;
+            min-width: 240px;
+        }
+        .input-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .input-field input:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 5px rgba(216, 27, 96, 0.3);
         }
         .kisi-kisi-box {
             background-color: var(--card-bg);
@@ -126,6 +169,32 @@
             background: var(--accent-pink);
             color: var(--dark-text);
         }
+
+        /* Review Classes for Answers */
+        .option-correct {
+            background-color: var(--correct-bg) !important;
+            border-color: var(--correct-border) !important;
+            color: #1b5e20 !important;
+            font-weight: bold;
+        }
+        .option-incorrect {
+            background-color: var(--incorrect-bg) !important;
+            border-color: var(--incorrect-border) !important;
+            color: #b71c1c !important;
+        }
+        .answer-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            display: none;
+        }
+        .answer-feedback.correct-text {
+            color: #2e7d32;
+        }
+        .answer-feedback.incorrect-text {
+            color: #c62828;
+        }
+
         .btn-submit {
             display: block;
             width: 100%;
@@ -168,6 +237,21 @@
         <span class="teacher-tag">Teacher: Ms. Theres</span>
     </div>
 
+    <!-- STUDENT INFORMATION -->
+    <div class="student-info-box">
+        <h3>📝 Student Identity</h3>
+        <div class="form-group">
+            <div class="input-field">
+                <label for="studentName">Full Name <span style="color:red;">*</span></label>
+                <input type="text" id="studentName" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-field">
+                <label for="studentClass">Class / Section <span style="color:red;">*</span></label>
+                <input type="text" id="studentClass" placeholder="e.g. Grade 9-A" required>
+            </div>
+        </div>
+    </div>
+
     <!-- EXAM BLUEPRINT (KISI-KISI) -->
     <div class="kisi-kisi-box">
         <h3>📋 Material Review Blueprint (Kisi-Kisi)</h3>
@@ -191,7 +275,6 @@
 </div>
 
 <script>
-    // 40 Multiple Choice Questions derived directly from Grade 9 Biology Content
     const mcQuestions = [
         {
             q: "What is asexual reproduction?",
@@ -470,7 +553,6 @@
         }
     ];
 
-    // Fisher-Yates Shuffle Function for Questions & Options
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -478,23 +560,30 @@
         }
     }
 
-    // Render Unscrambled Questions & Choices
+    let renderList = [];
+
     function renderMCQuestions() {
-        let shuffledQuestions = [...mcQuestions];
-        shuffleArray(shuffledQuestions);
+        let questionsCopy = JSON.parse(JSON.stringify(mcQuestions));
+        shuffleArray(questionsCopy);
 
         const container = document.getElementById('mcContainer');
         const labels = ['A', 'B', 'C', 'D'];
 
-        shuffledQuestions.forEach((qObj, index) => {
+        questionsCopy.forEach((qObj, index) => {
             let optionsWithStatus = qObj.options.map((opt, i) => {
                 return { text: opt, isCorrect: i === qObj.answer };
             });
 
             shuffleArray(optionsWithStatus);
 
+            renderList.push({
+                question: qObj.q,
+                options: optionsWithStatus
+            });
+
             let qDiv = document.createElement('div');
             qDiv.className = 'question-card';
+            qDiv.id = `q_card_${index}`;
 
             let qText = document.createElement('div');
             qText.className = 'question-title';
@@ -507,7 +596,7 @@
             optionsWithStatus.forEach((optObj, optIndex) => {
                 let li = document.createElement('li');
                 li.innerHTML = `
-                    <label>
+                    <label id="label_${index}_${optIndex}">
                         <input type="radio" name="mc_${index}" value="${optObj.isCorrect}">
                         ${labels[optIndex]}. ${optObj.text}
                     </label>
@@ -516,28 +605,74 @@
             });
 
             qDiv.appendChild(optList);
+
+            let feedbackDiv = document.createElement('div');
+            feedbackDiv.id = `feedback_${index}`;
+            feedbackDiv.className = 'answer-feedback';
+            qDiv.appendChild(feedbackDiv);
+
             container.appendChild(qDiv);
         });
     }
 
-    // Calculate Score
     function calculateScore() {
-        let correctCount = 0;
-        const totalMC = mcQuestions.length;
+        const nameInput = document.getElementById('studentName').value.trim();
+        const classInput = document.getElementById('studentClass').value.trim();
 
-        for (let i = 0; i < totalMC; i++) {
-            const selectedOption = document.querySelector(`input[name="mc_${i}"]:checked`);
-            if (selectedOption && selectedOption.value === "true") {
-                correctCount++;
-            }
+        if (!nameInput || !classInput) {
+            alert('Please fill out both your Name and Class before submitting!');
+            return;
         }
+
+        let correctCount = 0;
+        const totalMC = renderList.length;
+
+        renderList.forEach((qObj, index) => {
+            const selectedOption = document.querySelector(`input[name="mc_${index}"]:checked`);
+            const feedbackDiv = document.getElementById(`feedback_${index}`);
+            
+            // Find correct option index
+            const correctOptionIndex = qObj.options.findIndex(opt => opt.isCorrect);
+            const correctLabel = document.getElementById(`label_${index}_${correctOptionIndex}`);
+
+            // Reset option styling
+            qObj.options.forEach((_, optIndex) => {
+                const lbl = document.getElementById(`label_${index}_${optIndex}`);
+                lbl.classList.remove('option-correct', 'option-incorrect');
+            });
+
+            // Highlight the correct answer green
+            correctLabel.classList.add('option-correct');
+
+            if (selectedOption) {
+                const isCorrect = selectedOption.value === "true";
+                if (isCorrect) {
+                    correctCount++;
+                    feedbackDiv.className = 'answer-feedback correct-text';
+                    feedbackDiv.innerHTML = '✓ Correct!';
+                } else {
+                    selectedOption.parentElement.classList.add('option-incorrect');
+                    feedbackDiv.className = 'answer-feedback incorrect-text';
+                    feedbackDiv.innerHTML = `✗ Incorrect. Correct answer: ${qObj.options[correctOptionIndex].text}`;
+                }
+            } else {
+                feedbackDiv.className = 'answer-feedback incorrect-text';
+                feedbackDiv.innerHTML = `⚠ Not answered. Correct answer: ${qObj.options[correctOptionIndex].text}`;
+            }
+
+            feedbackDiv.style.display = 'block';
+        });
 
         const score = Math.round((correctCount / totalMC) * 100);
         const resultBox = document.getElementById('resultBox');
         resultBox.style.display = 'block';
-        resultBox.innerHTML = `Your Final Score: ${score} / 100<br><span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span>`;
+        resultBox.innerHTML = `
+            <strong>Student:</strong> ${nameInput} | <strong>Class:</strong> ${classInput}<br>
+            <span style="font-size: 24px; color: var(--primary-pink);">Final Score: ${score} / 100</span><br>
+            <span style="font-size: 16px; font-weight: normal;">(Answered ${correctCount} out of ${totalMC} questions correctly)</span>
+        `;
 
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        resultBox.scrollIntoView({ behavior: 'smooth' });
     }
 
     window.onload = function() {
