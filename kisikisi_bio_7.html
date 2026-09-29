@@ -13,6 +13,10 @@
             --accent-blue: #90e0ef;
             --dark-text: #03045e;
             --border-color: #caf0f8;
+            --correct-bg: #d4edda;
+            --correct-border: #28a745;
+            --incorrect-bg: #f8d7da;
+            --incorrect-border: #dc3545;
         }
 
         body {
@@ -66,6 +70,47 @@
             font-weight: bold;
             font-size: 14px;
             margin-top: 5px;
+        }
+        .student-info-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border: 2px solid var(--secondary-blue);
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .student-info-box h3 {
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .form-field {
+            flex: 1;
+            min-width: 250px;
+        }
+        .form-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--secondary-blue);
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .error-msg {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+            font-weight: bold;
         }
         .kisi-kisi-box {
             background-color: var(--card-bg);
@@ -126,6 +171,17 @@
             background: var(--accent-blue);
             color: var(--dark-text);
         }
+        .options-list label.correct-answer {
+            background-color: var(--correct-bg) !important;
+            border-color: var(--correct-border) !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .options-list label.user-incorrect {
+            background-color: var(--incorrect-bg) !important;
+            border-color: var(--incorrect-border) !important;
+            color: #721c24;
+        }
         .btn-submit {
             display: block;
             width: 100%;
@@ -168,19 +224,34 @@
         <span class="teacher-tag">Teacher: Ms. Theres</span>
     </div>
 
-    <div class="kisi-kisi-box">
-        <h3>📋 Material Review Topics</h3>
-        <ul>
-            <li><strong>Characteristics of Living Organisms:</strong> Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition, and Metabolism.</li>
-            <li><strong>Classification & Taxonomy:</strong> Taxonomic Ranks, Binomial Nomenclature, Arthropods, and Dichotomous Keys.</li>
-            <li><strong>Cell Structure & Organization:</strong> Organelles (Mitochondria, Ribosomes, Chloroplasts, Vacuoles, Cell Membrane, Cell Wall) and Specialized Cells (Sperm cell).</li>
-            <li><strong>Levels of Organization:</strong> Cell → Tissue → Organ → Organ System → Organism.</li>
-            <li><strong>Microscopes & Magnification:</strong> Light microscope magnification formula (Magnification = Image Size/ Actual Size).</li>
-            <li><strong>Human Body Organs:</strong> Identification and functions of major internal organs.</li>
-        </ul>
-    </div>
-
     <form id="reviewForm">
+        <div class="student-info-box">
+            <h3>📝 Student Information</h3>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="studentName">Full Name <span style="color:red;">*</span></label>
+                    <input type="text" id="studentName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-field">
+                    <label for="studentClass">Class <span style="color:red;">*</span></label>
+                    <input type="text" id="studentClass" placeholder="e.g., Grade 7-A" required>
+                </div>
+            </div>
+            <div id="infoError" class="error-msg">Please fill in both Name and Class before submitting.</div>
+        </div>
+
+        <div class="kisi-kisi-box">
+            <h3>📋 Material Review Topics</h3>
+            <ul>
+                <li><strong>Characteristics of Living Organisms:</strong> Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition, and Metabolism.</li>
+                <li><strong>Classification & Taxonomy:</strong> Taxonomic Ranks, Binomial Nomenclature, Arthropods, and Dichotomous Keys.</li>
+                <li><strong>Cell Structure & Organization:</strong> Organelles (Mitochondria, Ribosomes, Chloroplasts, Vacuoles, Cell Membrane, Cell Wall) and Specialized Cells (Sperm cell).</li>
+                <li><strong>Levels of Organization:</strong> Cell → Tissue → Organ → Organ System → Organism.</li>
+                <li><strong>Microscopes & Magnification:</strong> Light microscope magnification formula (Magnification = Image Size / Actual Size).</li>
+                <li><strong>Human Body Organs:</strong> Identification and functions of major internal organs.</li>
+            </ul>
+        </div>
+
         <h2>Multiple Choice Questions</h2>
         <div id="mcContainer"></div>
 
@@ -394,6 +465,8 @@
         }
     ];
 
+    let renderedQuestions = [];
+
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -402,21 +475,26 @@
     }
 
     function renderMCQuestions() {
-        let shuffledQuestions = [...mcQuestions];
-        shuffleArray(shuffledQuestions);
+        renderedQuestions = mcQuestions.map(qObj => {
+            let optionsWithStatus = qObj.options.map((opt, i) => {
+                return { text: opt, isCorrect: i === qObj.answer };
+            });
+            shuffleArray(optionsWithStatus);
+            return {
+                q: qObj.q,
+                options: optionsWithStatus
+            };
+        });
+
+        shuffleArray(renderedQuestions);
 
         const container = document.getElementById('mcContainer');
         const labels = ['A', 'B', 'C', 'D'];
 
-        shuffledQuestions.forEach((qObj, index) => {
-            let optionsWithStatus = qObj.options.map((opt, i) => {
-                return { text: opt, isCorrect: i === qObj.answer };
-            });
-
-            shuffleArray(optionsWithStatus);
-
+        renderedQuestions.forEach((qObj, index) => {
             let qDiv = document.createElement('div');
             qDiv.className = 'question-card';
+            qDiv.id = `q_card_${index}`;
 
             let qText = document.createElement('div');
             qText.className = 'question-title';
@@ -426,11 +504,11 @@
             let optList = document.createElement('ul');
             optList.className = 'options-list';
 
-            optionsWithStatus.forEach((optObj, optIndex) => {
+            qObj.options.forEach((optObj, optIndex) => {
                 let li = document.createElement('li');
                 li.innerHTML = `
-                    <label>
-                        <input type="radio" name="mc_${index}" value="${optObj.isCorrect}">
+                    <label id="label_${index}_${optIndex}">
+                        <input type="radio" name="mc_${index}" value="${optObj.isCorrect}" data-opt-index="${optIndex}">
                         ${labels[optIndex]}. ${optObj.text}
                     </label>
                 `;
@@ -443,22 +521,55 @@
     }
 
     function calculateScore() {
+        const nameInput = document.getElementById('studentName').value.trim();
+        const classInput = document.getElementById('studentClass').value.trim();
+        const infoError = document.getElementById('infoError');
+
+        if (!nameInput || !classInput) {
+            infoError.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        } else {
+            infoError.style.display = 'none';
+        }
+
         let correctCount = 0;
-        const totalMC = mcQuestions.length;
+        const totalMC = renderedQuestions.length;
 
         for (let i = 0; i < totalMC; i++) {
             const selectedOption = document.querySelector(`input[name="mc_${i}"]:checked`);
-            if (selectedOption && selectedOption.value === "true") {
-                correctCount++;
+            
+            renderedQuestions[i].options.forEach((opt, optIndex) => {
+                const label = document.getElementById(`label_${i}_${optIndex}`);
+                label.classList.remove('correct-answer', 'user-incorrect');
+
+                if (opt.isCorrect) {
+                    label.classList.add('correct-answer');
+                }
+            });
+
+            if (selectedOption) {
+                if (selectedOption.value === "true") {
+                    correctCount++;
+                } else {
+                    const wrongIndex = selectedOption.getAttribute('data-opt-index');
+                    const wrongLabel = document.getElementById(`label_${i}_${wrongIndex}`);
+                    wrongLabel.classList.add('user-incorrect');
+                }
             }
         }
 
         const score = Math.round((correctCount / totalMC) * 100);
         const resultBox = document.getElementById('resultBox');
         resultBox.style.display = 'block';
-        resultBox.innerHTML = `Your Score: ${score} / 100<br><span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span>`;
+        resultBox.innerHTML = `
+            <strong>Student:</strong> ${nameInput} | <strong>Class:</strong> ${classInput}<br>
+            <span style="font-size: 24px; color: var(--primary-blue);">Score: ${score} / 100</span><br>
+            <span style="font-size: 16px; font-weight: normal;">(You answered ${correctCount} out of ${totalMC} questions correctly)</span><br>
+            <small style="font-size: 14px; font-weight: normal; color: #555;">Green highlights indicate the correct answers. Red highlights show incorrect choices.</small>
+        `;
 
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        resultBox.scrollIntoView({ behavior: 'smooth' });
     }
 
     window.onload = function() {
